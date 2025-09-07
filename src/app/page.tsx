@@ -643,11 +643,27 @@ const Portfolio: React.FC = () => {
             </div>
             
             <div className="flex gap-4">
-              {[Mail, Phone].map((Icon, index) => (
-                <div key={index} className="w-12 h-12 bg-gray-100 hover:bg-blue-100 rounded-full flex items-center justify-center transition duration-300 cursor-pointer group">
-                  <Icon className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition duration-300" />
-                </div>
-              ))}
+               {[Mail, Phone, Linkedin].map((Icon, index) => (
+    Icon === Linkedin ? (
+      <a
+        key={index}
+        href="https://www.linkedin.com/in/dr-t-marimuthu-cse-4a9284281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-12 h-12 bg-gray-100 hover:bg-blue-100 rounded-full flex items-center justify-center transition duration-300 cursor-pointer group"
+      >
+             <Icon className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition duration-300" />
+                   </a>
+                ) : (
+                <div
+                key={index}
+                className="w-12 h-12 bg-gray-100 hover:bg-blue-100 rounded-full flex items-center justify-center transition duration-300 cursor-pointer group"
+                >
+                <Icon className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition duration-300" />
+            </div>
+          )
+          ))}
+
             </div>
           </div>
           
